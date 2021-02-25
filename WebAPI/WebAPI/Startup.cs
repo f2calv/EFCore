@@ -26,6 +26,7 @@ namespace WebAPI
 
             services.AddDbContext<MyDbContext>(optionsAction: options
                 => options.UseInMemoryDatabase(databaseName: "test" ?? string.Empty));
+            services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
