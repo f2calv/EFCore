@@ -21,16 +21,15 @@ namespace WebAPI.Services
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("Consume Scoped Service Hosted Service running.");
-
             await DoWork(stoppingToken);
         }
 
         private async Task DoWork(CancellationToken stoppingToken)
         {
-            //while (true)
+            while (true)
             {
-                //await Task.Delay(2_000);
-                //_logger.LogInformation($"{DateTime.UtcNow:HH:mm:ss}\tConsume Scoped Service Hosted Service is working.");
+                await Task.Delay(2_000);
+                _logger.LogInformation($"{DateTime.UtcNow:HH:mm:ss}\tConsume Scoped Service Hosted Service is working.");
 
                 using (var scope = Services.CreateScope())
                 {
