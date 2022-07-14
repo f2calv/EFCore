@@ -21,10 +21,10 @@ namespace WebAPI.Services
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("Consume Scoped Service Hosted Service running.");
-            await DoWork(stoppingToken);
+            await TestScopedContext(stoppingToken);
         }
 
-        private async Task DoWork(CancellationToken stoppingToken)
+        private async Task TestScopedContext(CancellationToken stoppingToken)
         {
             while (true)
             {

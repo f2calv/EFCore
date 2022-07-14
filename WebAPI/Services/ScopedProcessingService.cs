@@ -12,7 +12,7 @@ namespace WebAPI.Services
 
     internal class ScopedProcessingService : IScopedProcessingService
     {
-        private int executionCount = 0;
+        //private int executionCount = 0;
         private readonly ILogger _logger;
         private readonly MyDbContext _context;
 
